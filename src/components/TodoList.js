@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NewTodoForm } from './NewTodoForm';
 import { Todo } from './Todo';
+import { v4 as uuidv4 } from 'uuid';
 
 class TodoList extends Component {
   constructor(props) {
@@ -23,10 +24,16 @@ class TodoList extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    const newTask = this.state.todo;
+    const newTask = {task: this.state.todo, id: uuidv4()};
     this.setState({
       tasks: [...this.state.tasks, newTask],
       todo: ''
+    });
+  }
+
+  handleRemove(id) {
+    this.setState({
+      tasks: this.state.tasks.filter(el => el.id !== id)
     });
   }
 
@@ -35,7 +42,14 @@ class TodoList extends Component {
       <div>
         <div>
           {this.state.tasks.map(task => {
-            return <Todo task={task} />;
+            return (
+              <Todo
+                key={task.id}
+                id={task.id}
+                task={task.task}
+                remove={() => this.handleRemove(task.id)} 
+              />
+            );
           })}
         </div>
         <NewTodoForm 
