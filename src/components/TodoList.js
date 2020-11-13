@@ -6,10 +6,12 @@ class TodoList extends Component {
     super(props);
 
     this.state = {
-      todo: ''
+      todo: '',
+      tasks: []
     }
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(evt) {
@@ -18,12 +20,27 @@ class TodoList extends Component {
     })
   }
 
+  handleSubmit(evt) {
+    evt.preventDefault();
+    const newTask = this.state.todo;
+    this.setState({
+      tasks: [...this.state.tasks, newTask],
+      todo: ''
+    });
+  }
+
   render() {
     return(
       <div>
+        <div>
+          {this.state.tasks.map(task => {
+            return <p>{task}</p>;
+          })}
+        </div>
         <NewTodoForm 
           todo={this.state.todo}
           onChange={this.handleChange}
+          onSubmit={this.handleSubmit}
         />
       </div>
     );
