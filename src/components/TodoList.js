@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {NewTodoForm} from './NewTodoForm';
+import { NewTodoForm } from './NewTodoForm';
+import { Todo } from './Todo';
 
 class TodoList extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class TodoList extends Component {
       <div>
         <div>
           {this.state.tasks.map(task => {
-            return <p>{task}</p>;
+            return <Todo task={task} />;
           })}
         </div>
         <NewTodoForm 
