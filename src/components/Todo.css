@@ -1,0 +1,52 @@
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eb6069;
+  padding: 12px 40px;
+}
+
+.Todo:not(:last-of-type) {
+  margin-bottom: 4px;
+}
+
+.Todo p {
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: left;
+  color: #fff;
+  margin-right: 24px;
+}
+
+@media screen and (min-width: 500px) {
+  .Todo p {
+    margin-right: 40px;
+  }
+}
+
+.Todo-buttons {
+  display: flex;
+}
+
+.Todo-button {
+  background-color: transparent;
+  border: none;
+}
+
+.Todo-button:hover {
+  cursor: pointer;
+}
+
+.Todo-button:hover svg {
+  color: rgba(255, 255, 255, .85);
+}
+
+.Todo-button svg {
+  height: 18px;
+  width: auto;
+  color: #fff;
+}
+
+.Todo-editBtn {
+  margin-right: 12px;
+}
