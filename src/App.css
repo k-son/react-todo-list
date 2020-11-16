@@ -2,5 +2,5 @@
   width: 100%;
   min-height: 100vh;
   background-image: linear-gradient(to right, rgb(180, 0, 208), rgb(0, 160, 196));
-  padding-top: 10vh;
+  padding: 10vh 0;
 }
