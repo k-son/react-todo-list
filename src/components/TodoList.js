@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NewTodoForm } from './NewTodoForm';
-import { Todo } from './Todo';
+import Todo from './Todo';
 import { v4 as uuidv4 } from 'uuid';
 import './TodoList.css';
 
