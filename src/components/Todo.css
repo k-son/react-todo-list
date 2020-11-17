@@ -1,13 +1,24 @@
+li {
+  list-style-type: none;
+  background-color: #eb6069;
+}
+
+li:not(:last-of-type) {
+  margin-bottom: 4px;
+}
+
 .Todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #eb6069;
-  padding: 12px 40px;
+  padding: 0 40px;
 }
 
-.Todo:not(:last-of-type) {
-  margin-bottom: 4px;
+.Todo-text {
+  flex: 0 1 100%;
+  margin-right: 12px;
+  padding: 12px 0;
+  
 }
 
 .Todo p {

@@ -59,7 +59,7 @@ class TodoList extends Component {
           <h1>Todo List!</h1>
           <h2>A simple react todo list app.</h2>
         </div>        
-        <div>
+        <ul>
           {this.state.tasks.map(task => {
             return (
               <Todo
@@ -71,7 +71,7 @@ class TodoList extends Component {
               />
             );
           })}
-        </div>
+        </ul>
         <NewTodoForm 
           todo={this.state.todo}
           onChange={this.handleChange}

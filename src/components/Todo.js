@@ -55,7 +55,9 @@ class Todo extends Component {
     } else {
       result = (
         <div className="Todo">
-          <p className={this.state.completed && 'Todo-completed'} onClick={this.handleClick}>{this.props.task}</p>
+          <div className="Todo-text" onClick={this.handleClick}>
+            <p className={this.state.completed && 'Todo-completed'}>{this.props.task}</p>
+          </div>
           <div className="Todo-buttons">
             <button className="Todo-button Todo-editBtn" onClick={this.toggleEdit}>{<EditIcon />}</button>
             <button className="Todo-button Todo-removeBtn" onClick={this.props.remove}>{<RemoveIcon />}</button>
@@ -63,9 +65,9 @@ class Todo extends Component {
         </div>);
     }
     return (
-      <div>
+      <li>
         {result}
-      </div>
+      </li>
     );
   } 
 }
