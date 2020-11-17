@@ -7,9 +7,14 @@ class Todo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scheduled: true
+      scheduled: true,
+      isEdited: false,
+      task: this.props.task
     };
     this.handleClick = this.handleClick.bind(this);
+    this.toggleEdit = this.toggleEdit.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   handleClick() {
@@ -18,14 +23,48 @@ class Todo extends Component {
     });
   }
 
+  toggleEdit() {
+    this.setState({
+      isEdited: !this.state.isEdited 
+    });
+  }
+
+  handleEdit(evt) {
+    this.setState({
+      task: evt.target.value
+    })
+  }
+
+  handleUpdate(evt) {
+    evt.preventDefault();
+    this.props.update(this.props.id, this.state.task);
+    this.setState({
+      isEdited: !this.state.isEdited
+    });
+    evt.stopPropagation();
+  }
+
   render() {
-    return(
-      <div className="Todo" onClick={this.handleClick}>
-        <p className={!this.state.scheduled && 'Todo-done'}>{this.props.task}</p>
-        <div className="Todo-buttons">
-          <button className="Todo-button Todo-editBtn">{<EditIcon />}</button>
-          <button className="Todo-button Todo-removeBtn" onClick={this.props.remove}>{<RemoveIcon />}</button>
-        </div>
+    let result;
+    if (this.state.isEdited) {
+      result = (
+        <form className="Todo-form" onSubmit={this.handleUpdate}>
+          <input type="text" value={this.state.task} onChange={this.handleEdit}></input>
+          <button>update</button>
+        </form>);
+    } else {
+      result = (
+        <div className="Todo">
+          <p className={!this.state.scheduled && 'Todo-done'} onClick={this.handleClick}>{this.props.task}</p>
+          <div className="Todo-buttons">
+            <button className="Todo-button Todo-editBtn" onClick={this.toggleEdit}>{<EditIcon />}</button>
+            <button className="Todo-button Todo-removeBtn" onClick={this.props.remove}>{<RemoveIcon />}</button>
+          </div>
+        </div>);
+    }
+    return (
+      <div>
+        {result}
       </div>
     );
   } 

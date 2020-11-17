@@ -15,6 +15,8 @@ class TodoList extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   handleChange(evt) {
@@ -34,7 +36,19 @@ class TodoList extends Component {
 
   handleRemove(id) {
     this.setState({
-      tasks: this.state.tasks.filter(el => el.id !== id)
+      tasks: this.state.tasks.filter(task => task.id !== id)
+    });
+  }
+
+  handleUpdate(id, updatedTask) {
+    const updatedTodos = this.state.tasks.map(todo => {
+      if (todo.id === id) {
+        return {...todo, task: updatedTask};
+      }
+      return todo;
+    });
+    this.setState({
+      tasks: updatedTodos
     });
   }
 
@@ -52,7 +66,8 @@ class TodoList extends Component {
                 key={task.id}
                 id={task.id}
                 task={task.task}
-                remove={() => this.handleRemove(task.id)} 
+                remove={() => this.handleRemove(task.id)}
+                update={this.handleUpdate}
               />
             );
           })}
