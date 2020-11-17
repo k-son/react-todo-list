@@ -7,7 +7,7 @@ class Todo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scheduled: true,
+      completed: false,
       isEdited: false,
       task: this.props.task
     };
@@ -19,7 +19,7 @@ class Todo extends Component {
 
   handleClick() {
     this.setState({
-      scheduled: !this.state.scheduled 
+      completed: !this.state.completed 
     });
   }
 
@@ -55,7 +55,7 @@ class Todo extends Component {
     } else {
       result = (
         <div className="Todo">
-          <p className={!this.state.scheduled && 'Todo-done'} onClick={this.handleClick}>{this.props.task}</p>
+          <p className={this.state.completed && 'Todo-completed'} onClick={this.handleClick}>{this.props.task}</p>
           <div className="Todo-buttons">
             <button className="Todo-button Todo-editBtn" onClick={this.toggleEdit}>{<EditIcon />}</button>
             <button className="Todo-button Todo-removeBtn" onClick={this.props.remove}>{<RemoveIcon />}</button>
