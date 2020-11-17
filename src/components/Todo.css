@@ -18,10 +18,11 @@ li:not(:last-of-type) {
   flex: 0 1 100%;
   margin-right: 12px;
   padding: 12px 0;
-  
 }
 
 .Todo p {
+  position: relative;
+  width: fit-content;
   font-size: 16px;
   line-height: 1.2;
   text-align: left;
@@ -35,8 +36,26 @@ li:not(:last-of-type) {
   }
 }
 
-.Todo-completed {
-  text-decoration: line-through #fff;
+.Todo p.completed {
+  opacity: .7;
+}
+
+.Todo p.completed::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -0.5em;
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  animation: strikeItem .35s ease-out 0s forwards;
+}
+
+@keyframes strikeItem {
+  to {
+    width: calc(100% + 1em);
+  }
 }
 
 .Todo-buttons {

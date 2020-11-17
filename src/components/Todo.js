@@ -56,7 +56,7 @@ class Todo extends Component {
       result = (
         <div className="Todo">
           <div className="Todo-text" onClick={this.handleClick}>
-            <p className={this.state.completed && 'Todo-completed'}>{this.props.task}</p>
+            <p className={this.state.completed && 'completed'}>{this.props.task}</p>
           </div>
           <div className="Todo-buttons">
             <button className="Todo-button Todo-editBtn" onClick={this.toggleEdit}>{<EditIcon />}</button>
