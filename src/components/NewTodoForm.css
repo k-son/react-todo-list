@@ -19,7 +19,7 @@
 }
 
 .NewTodoForm input {
-  width: 100%;
+  flex: 0 20 100%;
   font-size: 14px;
   padding: 0 16px;
   color: #222;
@@ -29,8 +29,9 @@
 }
 
 .NewTodoForm button {
+  flex: 0 1 120px;
+  min-width: 60px;
   height: 40px;
-  width: 120px;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;

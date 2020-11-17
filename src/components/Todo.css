@@ -65,3 +65,40 @@ li:not(:last-of-type) {
 .Todo-editBtn {
   margin-right: 12px;
 }
+
+.Todo-form {
+  display: flex;
+  align-items: center;
+  padding: 12px 40px;
+}
+
+.Todo-form input {
+  flex: 0 1 160px;
+  min-width: 60px;
+  height: 24px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #222;
+  padding: 0 16px;
+  border: 1px solid #fff;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.Todo-form button {
+  flex: 0 0 80px;
+  height: 24px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.Todo-form button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, .15);
+}
