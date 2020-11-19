@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/react-todo-list/static/css/main.1b3cee3e.chunk.css",
+    "main.js": "/react-todo-list/static/js/main.0d43d24c.chunk.js",
+    "main.js.map": "/react-todo-list/static/js/main.0d43d24c.chunk.js.map",
+    "runtime-main.js": "/react-todo-list/static/js/runtime-main.a3a62c6e.js",
+    "runtime-main.js.map": "/react-todo-list/static/js/runtime-main.a3a62c6e.js.map",
+    "static/js/2.adf95ac1.chunk.js": "/react-todo-list/static/js/2.adf95ac1.chunk.js",
+    "static/js/2.adf95ac1.chunk.js.map": "/react-todo-list/static/js/2.adf95ac1.chunk.js.map",
+    "static/js/3.63314004.chunk.js": "/react-todo-list/static/js/3.63314004.chunk.js",
+    "static/js/3.63314004.chunk.js.map": "/react-todo-list/static/js/3.63314004.chunk.js.map",
+    "index.html": "/react-todo-list/index.html",
+    "static/css/main.1b3cee3e.chunk.css.map": "/react-todo-list/static/css/main.1b3cee3e.chunk.css.map",
+    "static/js/2.adf95ac1.chunk.js.LICENSE.txt": "/react-todo-list/static/js/2.adf95ac1.chunk.js.LICENSE.txt",
+    "static/media/pen-solid.4b1bdc1c.svg": "/react-todo-list/static/media/pen-solid.4b1bdc1c.svg",
+    "static/media/trash-alt-solid.6346df54.svg": "/react-todo-list/static/media/trash-alt-solid.6346df54.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a3a62c6e.js",
+    "static/js/2.adf95ac1.chunk.js",
+    "static/css/main.1b3cee3e.chunk.css",
+    "static/js/main.0d43d24c.chunk.js"
+  ]
+}
